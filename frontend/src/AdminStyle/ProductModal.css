@@ -1,0 +1,122 @@
+.product-modal {
+    max-width: 600px !important;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-deleted-btn {
+    padding: 10px 20px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.toggle-deleted-btn.active {
+    background: #e67e22;
+}
+
+.toggle-deleted-btn:hover {
+    opacity: 0.9;
+}
+
+.deleted {
+    background-color: #fff3f3;
+}
+
+.deleted:hover {
+    background-color: #ffe6e6 !important;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-badge.deleted {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.restore-btn {
+    background: #27ae60;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.restore-btn:hover {
+    background: #219a52;
+}
+
+.delete-soft-btn {
+    background: #f39c12;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-soft-btn:hover {
+    background: #e67e22;
+}
+
+.delete-hard-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.delete-hard-btn:hover {
+    background: #c0392b;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+}

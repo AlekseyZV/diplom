@@ -1,0 +1,464 @@
+/* src/styles/Orders.module.css */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container h2 {
+    margin: 0 0 30px 0;
+    color: #333;
+    text-align: center;
+}
+.orders-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.orders-container h2 {
+    margin: 0 0 30px 0;
+    color: #333;
+    text-align: center;
+}
+
+.orders-not-authorized,
+.orders-loading,
+.orders-error,
+.orders-empty {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.orders-not-authorized h2,
+.orders-error h2,
+.orders-empty h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.orders-not-authorized p,
+.orders-error p,
+.orders-empty p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Статистика */
+.orders-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.stat-icon {
+    background: #3498db;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-info h3 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.stat-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Список заказов */
+.orders-list {
+    margin-bottom: 40px;
+}
+
+.order-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.order-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.order-header {
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-header:hover {
+    background-color: #f8f9fa;
+}
+
+.order-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.order-number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-label {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.order-value {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.order-status .status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.order-header-secondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.order-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.order-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-label {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.summary-value {
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.order-expand {
+    color: #3498db;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+}
+
+.order-details {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.order-info {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #333;
+    font-weight: 500;
+}
+
+.order-items {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.order-items h4 {
+    margin: 0 0 15px 0;
+    color: #444;
+}
+
+.items-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.item-quantity,
+.item-price,
+.item-total {
+    color: #555;
+    text-align: right;
+}
+
+.item-total {
+    font-weight: 500;
+    color: #333;
+}
+
+.no-items {
+    text-align: center;
+    color: #666;
+    padding: 20px 0;
+}
+
+.order-total {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-row span:first-child {
+    color: #333;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.total-amount {
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* Футер с общей статистикой */
+.orders-footer {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.orders-footer h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+.footer-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.footer-stat {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.stat-label {
+    display: block;
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.order-status {
+    padding: 10px;
+    border-radius: 100px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .orders-container {
+        padding: 15px;
+    }
+    
+    .orders-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .order-header-secondary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .order-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .item-quantity,
+    .item-price,
+    .item-total {
+        text-align: center;
+    }
+    
+    .footer-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .order-header {
+        padding: 15px;
+    }
+    
+    .order-details {
+        padding: 15px;
+    }
+    
+    .order-info,
+    .order-items,
+    .order-total {
+        padding: 15px;
+    }
+    
+    .total-row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .orders-footer {
+        padding: 20px;
+    }
+}
+
+/* Анимация для раскрытия заказа */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 1000px;
+    }
+}
+
+.order-details {
+    animation: slideDown 0.3s ease-out;
+}

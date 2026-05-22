@@ -1,0 +1,9 @@
+SELECT zakaz.id, statuszakaza.name as status, `dateSozdaniy`, tovarzakaz.kolichestvo as kolichestvo, tovar.Name as tovar, kategoriy.Name as kategoriy FROM `zakaz`
+JOIN tovarzakaz
+on zakaz.id = tovarzakaz.idZakaz
+JOIN tovar
+on tovarzakaz.idTovar = tovar.id
+JOIN kategoriy
+on tovar.idKategoriy = kategoriy.id
+JOIN statuszakaza
+ON zakaz.status = statuszakaza.id

@@ -1,0 +1,119 @@
+.distributors-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+}
+
+.distributors-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2rem;
+}
+
+.distributors-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.distributors-track {
+    display: flex;
+    gap: 40px;
+    animation: moveLogos 30s linear infinite;
+    padding: 20px 0;
+}
+
+/* Пауза при наведении */
+.distributors-track:hover {
+    animation-play-state: paused;
+}
+
+.distributor-card {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.distributor-card:hover {
+    transform: translateY(-5px);
+}
+
+.distributor-logo {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.distributor-card:hover .logo-image {
+    transform: scale(1.05);
+}
+
+.distributor-card h3 {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    font-weight: 500;
+}
+
+@keyframes moveLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 8 - 40px * 8)); /* ширина карточки * количество + gap * количество */
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .distributor-logo {
+        width: 150px;
+        height: 100px;
+    }
+    
+    .distributor-card {
+        min-width: 150px;
+    }
+    
+    @keyframes moveLogos {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 8 - 40px * 8));
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .distributor-logo {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .distributor-card {
+        min-width: 120px;
+    }
+    
+    .distributors-track {
+        gap: 20px;
+    }
+}

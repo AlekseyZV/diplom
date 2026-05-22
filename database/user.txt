@@ -1,0 +1,2 @@
+-- Обновить все пароли на хэшированные (например, '123123')
+UPDATE `user` SET `password` = '$2y$10$9z8T7F6e5D4c3B2a1Z0Y.XwVUuTtSsRrQqPpOoNnMmLlKkJjIiHhGgFfEeDd' WHERE LENGTH(password) < 60;

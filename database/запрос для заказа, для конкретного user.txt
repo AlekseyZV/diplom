@@ -1,0 +1,12 @@
+SELECT user.id as user, 
+`familiy` as familiy,
+zakaz.id as idZakaz, 
+tovar.Name as tovar 
+FROM `user`
+INNER JOIN zakaz
+on user.id = zakaz.idUser
+INNER JOIN tovarzakaz
+ON zakaz.id = tovarzakaz.idZakaz
+INNER JOIN tovar
+on tovarzakaz.idTovar=tovar.id
+WHERE user.id=1

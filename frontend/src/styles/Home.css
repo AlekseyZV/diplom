@@ -1,0 +1,487 @@
+/* Home.css - Новая стилистика */
+.home-page {
+    max-width: 100%;
+    background-color: var(--bg-light);
+}
+
+/* Hero секция с новым градиентом */
+.hero-section {
+    
+    background: rgb(237, 162, 23);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: var(--space-xxl) var(--space-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><path d="M0,0 L100,0 L100,100 Z" fill="white"/></svg>');
+    background-size: cover;
+    pointer-events: none;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+    opacity: 0.95;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-buttons .btn-primary {
+    background-color: var(--accent-color);
+    border: 2px solid white;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Основные направления */
+.directions-section {
+    margin: var(--space-xxl) 0;
+    padding: 0 var(--space-md);
+}
+
+.directions-section h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: var(--space-xl);
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: var(--space-md);
+}
+
+.directions-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-orange);
+    border-radius: 2px;
+}
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.direction-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border-top: 5px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.direction-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-orange);
+}
+
+.direction-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.direction-card h3 {
+    color: var(--dark-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.direction-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Преимущества с новыми цветами */
+.features-section {
+    margin: var(--space-xxl) 0;
+    padding: var(--space-xl) var(--space-md);
+    background: linear-gradient(to bottom, transparent, var(--bg-light) 20%);
+}
+
+.features-section h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: var(--space-xl);
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: var(--space-md);
+}
+
+.features-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-green);
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.feature-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-green);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: var(--space-md);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    color: var(--dark-color);
+    margin-bottom: var(--space-md);
+    font-size: 1.3rem;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Дистрибьюторы с новой стилистикой */
+.distributors-section {
+    padding: var(--space-xxl) var(--space-md);
+    background: white;
+    margin: var(--space-xxl) 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.distributors-section h2 {
+    text-align: center;
+    color: var(--dark-color);
+    margin-bottom: var(--space-xl);
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: var(--space-md);
+}
+
+.distributors-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-yellow);
+    border-radius: 2px;
+}
+
+.distributors-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: var(--space-lg) 0;
+}
+
+.distributors-track {
+    display: flex;
+    gap: 40px;
+    animation: moveLogos 30s linear infinite;
+    padding: var(--space-md) 0;
+}
+
+.distributor-card {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+    padding: var(--space-md);
+    border-radius: var(--radius-md); 
+}
+
+.distributor-card:hover {
+    transform: translateY(-5px);
+}
+
+.distributor-logo {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-sm);
+    background-color: white;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    border: 1px solid var(--border-color);
+}
+
+.logo-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.distributor-card:hover .logo-image {
+    transform: scale(1.05);
+}
+
+/* Анимация для логотипов */
+@keyframes moveLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 8 - 40px * 8));
+    }
+}
+
+/* Секция контактов (закомментирована, но стили на будущее) */
+.contact-section {
+    padding: var(--space-xxl) var(--space-md);
+    background: var(--gradient-green);
+    color: white;
+    margin-top: var(--space-xxl);
+    border-radius: var(--radius-lg);
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    color: white;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .directions-grid,
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: var(--space-xl) var(--space-sm);
+        margin-bottom: var(--space-xl);
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .directions-section h2,
+    .features-section h2,
+    .distributors-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .direction-card,
+    .feature-card {
+        padding: var(--space-lg);
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+    }
+    
+    .distributor-logo {
+        width: 150px;
+        height: 100px;
+    }
+    
+    .distributor-card {
+        min-width: 150px;
+    }
+    
+    @keyframes moveLogos {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-150px * 8 - 40px * 8));
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section {
+        padding: var(--space-lg) var(--space-sm);
+        border-radius: var(--radius-md);
+    }
+    
+    .directions-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .directions-section,
+    .features-section,
+    .distributors-section {
+        padding: var(--space-xl) var(--space-sm);
+    }
+    
+    .distributor-logo {
+        width: 120px;
+        height: 80px;
+    }
+    
+    .distributor-card {
+        min-width: 120px;
+        padding: var(--space-sm);
+    }
+    
+    .distributors-track {
+        gap: 20px;
+    }
+}

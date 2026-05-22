@@ -1,0 +1,10 @@
+# Минимальный .htaccess
+RewriteEngine On
+
+# ТОЛЬКО для чистых URL (/api/... -> /...)
+RewriteRule ^api/(.*)$ $1.php [L]
+
+# CORS заголовки (опционально, если уже есть в PHP)
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"

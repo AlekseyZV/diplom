@@ -1,0 +1,38 @@
+# .htaccess - с исключениями
+RewriteEngine On
+
+# CORS заголовки
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type"
+
+# OPTIONS запросы
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Не перенаправлять конкретные файлы
+RewriteCond %{REQUEST_URI} !^/checkout_simple\.php$
+RewriteCond %{REQUEST_URI} !^/checkout\.php$
+RewriteCond %{REQUEST_URI} !^/products\.php$
+RewriteCond %{REQUEST_URI} !^/categories\.php$
+
+# Остальное на index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+# .htaccess - простой вариант
+RewriteEngine On
+
+# CORS заголовки
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"
+
+# OPTIONS запросы
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# ВСЕ запросы (кроме существующих файлов) на index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
